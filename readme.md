@@ -1,8 +1,8 @@
-# werdy
+# weirdolib-ng
 
 ## Description
 
-A series of Python 2.7.x scripts for generating, merging, and sorting wordlist files.
+An overworked series of Python 3.x scripts for generating, merging, and sorting and counting wordlist files and db's.
 
 ## crunch.py
 
