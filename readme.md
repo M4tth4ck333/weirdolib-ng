@@ -1,46 +1,74 @@
 # weirdolib-ng
 
 ## Description
-
+(based on the work of derv merkler)
 An overworked series of Python 3.x scripts for generating, merging, and sorting and counting wordlist files and db's.
+based on bluez scapy networkx and many more 
+## Overview
 
-## crunch.py
-a wrapper for crunch in cpyhton3
+This repository contains a modular network engine designed for advanced penetration testing, network reconnaissance, and automated security assessments. 
+Inspired by leading open-source tools and frameworks, the engine integrates classic and modern techniques for network discovery, scanning, exploitation, and reporting.
 
-## dates.py
+---
 
-Generates all dates within a time range.
+## Features
 
-* Able to output months as abbreviated (e.g. JAN, FEB, MAR) or long-form (e.g. JANUARY, FEBRUARY, MARCH)
+- **Network Scanning & Enumeration**
+  - Automated detection of network interfaces (including monitor mode support)
+  - Scanning for wireless networks using system tools (e.g., `iw`)
+  - Parsing and structuring scan results into Python objects for further analysis
 
-## phone.py
+- **Wireless Network Analysis**
+  - Extraction of detailed access point and client information (SSID, BSSID, channel, signal, security, etc.)
+  - Support for channel and frequency mapping
+  - Management of network and client objects with serialization (JSON import/export)
 
-Generates every phone number for a given region in the U.S.  The script uses a database of "prefixes" (the 3 digits after the area code) to ignore invalid numbers.
+- **Modular Architecture**
+  - Core classes for `WirelessNetwork` and `WirelessClient`
+  - Helper functions for MAC address retrieval, signal quality calculation, and interface management
+  - Easily extensible for integration with other tools and frameworks
 
-* Looks up region by either city name or area code.
-* Has "autopwn" option which looks up location based on IP address and generates phone numbers.
-* Customization includes removing area code and setting separators between numbers. Example of formats:
-  * (555) 555-1234
-  * 555-555-1234
-  * 5555551234
-  * 555-1234
+- **Automation & Scripting**
+  - Define scan jobs and workflows using tables (lists of dicts) or enums for flexible automation
+  - Batch processing and workflow orchestration for repeatable assessments
 
-## weirdolib-ng 
-* Is Based on a airlib-ng spin off
-  
-Sorts given wordlist(s) depending on options.
+- **Error Handling & Reporting**
+  - Robust error codes and messages for device status, permissions, and scan results
+  - JSON-based reporting for integration with other tools or dashboards
 
-* Uses hard disk for storage while sorting; can sort large files that ```sort | uniq``` cannot.
-* Able to set minimum/maximum word length.
-* Drag-and-drop multiple wordlist files to combine, sort, and remove duplicates.
-* Automatically removes duplicate entries. Option to disable this feature.
-* Split output file into multiple files of specific byte size.
-* "Frequency sort" sorts based on how frequently words appear. Option to display table with word counts.
-* Convert entire wordlist to lower-case, upper-case, first-letter-capital, or "elite" text styles.
-* Option to 'make copies' of each word as lower-case, upper-case, first-letter-capital, and 'elite'.
-* Strip text to left/right of a separator. Useful for password dumps.
-* Filter words containing a filter.
-* Able to strip/keep non-printing characters and leadin/trailing whitespace characters.
-* Option to delete input files after they are parsed to save disk space.
+---
 
+## Example Workflow
 
+1. **Interface Detection**
+   - Automatically list all wireless interfaces and identify those in monitor mode
+
+2. **Network Scanning**
+   - Launch scans on selected interfaces and (optionally) specific frequencies
+   - Parse scan output and extract structured information on all detected networks
+
+3. **Data Management**
+   - Store and manage network and client objects
+   - Serialize/deserialize results for later use or reporting
+
+4. **Automation**
+   - Use tables or enums to define and execute multiple scan jobs in sequence
+
+---
+
+## Technologies Used
+
+- **Python 3.x**
+- **System tools:** `iw`, `iwconfig`
+- **Standard libraries:** `subprocess`, `re`, `json`, `datetime`, etc.
+
+---
+
+## Getting Started
+
+1. Clone this repository.
+2. Ensure Python 3.x and required system tools (`iw`, `iwconfig`) are installed.
+3. Run the main script as root (required for wireless scanning and interface management).
+4. Customize scan jobs or extend the engine with your own modules.
+
+---
