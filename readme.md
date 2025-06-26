@@ -3,6 +3,7 @@
 ## Description
 (based on the work of derv merkler)
 An overworked series of Python 3.x scripts for generating, merging, and sorting and counting wordlist files and db's.
+it's designed to make your life easier  
 based on bluez scapy networkx and many more 
 ## Overview
 
@@ -57,7 +58,9 @@ Inspired by leading open-source tools and frameworks, the engine integrates clas
 ---
 
 ## Technologies Used
-
+- **Modefied Jan Fork**
+- **Modefied Scapy**
+- **Modefied airolib-ng**
 - **Python 3.x**
 - **System tools:** `iw`, `iwconfig`
 - **Standard libraries:** `subprocess`, `re`, `json`, `datetime`, etc.
